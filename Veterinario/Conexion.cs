@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BCrypt.Net;
 
 namespace Veterinario
 {
@@ -15,12 +16,12 @@ namespace Veterinario
         {
             conexion = new MySqlConnection("Server = 127.0.0.1; Database = test; Uid = root; Pwd=;Port = 3306");
         }
-        public Boolean loginVeterinario(string Usuario, string Contraseña)
+        public Boolean loginVeterinario(string Usuario, string pass)
         {
             try
             {
                 conexion.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM veterinarios " +
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM clientes " +
                                      "where Usuario = @Usuario",
                                      conexion);
                 consulta.Parameters.AddWithValue("@Usuario", Usuario);
@@ -29,8 +30,8 @@ namespace Veterinario
 
                 if (resultado.Read())
                 {
-                    string contraseña = resultado.GetString("Contraseña");
-                    if (BCrypt.Net.BCrypt.Verify(Contraseña, contraseña))
+                    string contraseña = resultado.GetString("pass");
+                    if (BCrypt.Net.BCrypt.Verify(pass, contraseña))
                     {
                         return true;
                     }
@@ -48,7 +49,7 @@ namespace Veterinario
         public String insertaUsuario(String Nombre, String Apellidos,
                                        String DNI, String Correo,
                                        String Dirección, String Teléfono,
-                                       String Usuario, String Contraseña)
+                                       String Usuario, String pass)
         {
             try
             {
@@ -56,9 +57,10 @@ namespace Veterinario
                 MySqlCommand consulta =
                     new MySqlCommand("INSERT INTO clientes " +
                                      "(Nombre, Apellidos, DNI, Correo, " +
-                                     "Dirección, Teléfono, Usuario, Contraseña) " +
+                                     "Dirección, Teléfono, Usuario, Contraseña) " + 
                                      "VALUES (@Nombre, @Apellidos, @DNI, @Correo," +
-                                     "@Dirección, @Teléfono, @Usuario, @Contraseña)", conexion);
+                                     "@Dirección, @Teléfono, @Usuario, @pass)", conexion);
+
                 consulta.Parameters.AddWithValue("@Nombre", Nombre);
                 consulta.Parameters.AddWithValue("@Apellidos", Apellidos);
                 consulta.Parameters.AddWithValue("@DNI", DNI);
@@ -66,7 +68,7 @@ namespace Veterinario
                 consulta.Parameters.AddWithValue("@Dirección", Dirección);
                 consulta.Parameters.AddWithValue("@Teléfono", Teléfono);
                 consulta.Parameters.AddWithValue("@Usuario", Usuario);
-                consulta.Parameters.AddWithValue("@Contraseña", Contraseña);
+                consulta.Parameters.AddWithValue("@pass", pass);
 
                 consulta.ExecuteNonQuery();
 
