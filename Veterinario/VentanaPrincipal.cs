@@ -13,6 +13,7 @@ namespace Veterinario
     public partial class VentanaPrincipal : Form
     {
         Conexion conexion = new Conexion();
+       
         public VentanaPrincipal()
         {
             InitializeComponent();
@@ -22,5 +23,27 @@ namespace Veterinario
         {
            // MessageBox.Show(conexion.insertaUsuario(dni.Text, nombre.Text, pass.Text));
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        { 
+            MessageBox.Show(conexion.insertaMascota(id.Text, nombre.Text, tipo.Text,raza.Text, fecha_nac.Text));
+            this.Close();
+        }
+       
     }
 }

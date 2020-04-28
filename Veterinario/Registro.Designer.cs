@@ -44,7 +44,6 @@
             this.direccion = new System.Windows.Forms.TextBox();
             this.contraseña = new System.Windows.Forms.TextBox();
             this.nombre_usuario = new System.Windows.Forms.TextBox();
-            this.rol = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -177,17 +176,6 @@
             this.nombre_usuario.Size = new System.Drawing.Size(168, 20);
             this.nombre_usuario.TabIndex = 15;
             // 
-            // rol
-            // 
-            this.rol.FormattingEnabled = true;
-            this.rol.Items.AddRange(new object[] {
-            "Cliente",
-            "Trabajador"});
-            this.rol.Location = new System.Drawing.Point(27, 240);
-            this.rol.Name = "rol";
-            this.rol.Size = new System.Drawing.Size(121, 21);
-            this.rol.TabIndex = 16;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(27, 283);
@@ -214,7 +202,6 @@
             this.ClientSize = new System.Drawing.Size(483, 356);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.rol);
             this.Controls.Add(this.nombre_usuario);
             this.Controls.Add(this.contraseña);
             this.Controls.Add(this.direccion);
@@ -256,7 +243,6 @@
         private System.Windows.Forms.TextBox direccion;
         private System.Windows.Forms.TextBox contraseña;
         private System.Windows.Forms.TextBox nombre_usuario;
-        private System.Windows.Forms.ComboBox rol;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }
