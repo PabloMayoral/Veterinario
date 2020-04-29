@@ -130,6 +130,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="VentanaLogin.resx">
       <DependentUpon>VentanaLogin.cs</DependentUpon>
@@ -153,6 +154,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LICENSE.txt" />
+    <None Include="Resources\ralph.jpg" />
+    <None Include="Resources\homero.jpg" />
+    <None Include="Resources\daz.jpg" />
+    <None Include="Resources\folagor.jpg" />
+    <None Include="Resources\calvo.jpg" />
+    <None Include="Resources\triple7.jpg" />
+    <None Include="Resources\ash ketchup.jpg" />
+    <None Include="Resources\imagenVeterinario03.jpg" />
+    <None Include="Resources\imagenVeterinario.jpg" />
+    <None Include="Resources\imagenVeterinario02.jpg" />
+    <None Include="Resources\willyré.jpg" />
+    <None Include="Resources\interface_splash_current.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

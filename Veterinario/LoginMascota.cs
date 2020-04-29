@@ -52,7 +52,9 @@ namespace Veterinario
         //    }
         //    infoAnimales();
         }
+        private void VentanaLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Environment.Exit(1);
+        }
     }
-
-    
 }

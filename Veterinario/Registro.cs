@@ -34,6 +34,9 @@ namespace Veterinario
             v.Show();
 
         }
-
+        private void VentanaLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Environment.Exit(1);
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroUsuario));
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.contraseña = new System.Windows.Forms.TextBox();
@@ -48,76 +49,78 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(321, 295);
+            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button2.Location = new System.Drawing.Point(292, 255);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 33);
+            this.button2.Size = new System.Drawing.Size(97, 35);
             this.button2.TabIndex = 36;
-            this.button2.Text = "Back";
+            this.button2.Text = "Volver a la pantalla de inicio";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(23, 283);
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(4, 245);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(227, 45);
+            this.button1.Size = new System.Drawing.Size(113, 45);
             this.button1.TabIndex = 35;
-            this.button1.Text = "Registro";
+            this.button1.Text = "Registrarse como usario";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // contraseña
             // 
-            this.contraseña.Location = new System.Drawing.Point(23, 201);
+            this.contraseña.Location = new System.Drawing.Point(4, 184);
             this.contraseña.Name = "contraseña";
             this.contraseña.Size = new System.Drawing.Size(168, 20);
             this.contraseña.TabIndex = 33;
             // 
             // direccion
             // 
-            this.direccion.Location = new System.Drawing.Point(288, 144);
+            this.direccion.Location = new System.Drawing.Point(221, 135);
             this.direccion.Name = "direccion";
             this.direccion.Size = new System.Drawing.Size(168, 20);
             this.direccion.TabIndex = 32;
             // 
             // gmail
             // 
-            this.gmail.Location = new System.Drawing.Point(288, 85);
+            this.gmail.Location = new System.Drawing.Point(221, 75);
             this.gmail.Name = "gmail";
             this.gmail.Size = new System.Drawing.Size(168, 20);
             this.gmail.TabIndex = 31;
             // 
             // telefono
             // 
-            this.telefono.Location = new System.Drawing.Point(23, 144);
+            this.telefono.Location = new System.Drawing.Point(4, 135);
             this.telefono.Name = "telefono";
             this.telefono.Size = new System.Drawing.Size(168, 20);
             this.telefono.TabIndex = 30;
             // 
             // dni
             // 
-            this.dni.Location = new System.Drawing.Point(288, 35);
+            this.dni.Location = new System.Drawing.Point(221, 26);
             this.dni.Name = "dni";
             this.dni.Size = new System.Drawing.Size(168, 20);
             this.dni.TabIndex = 29;
             // 
             // apellidos
             // 
-            this.apellidos.Location = new System.Drawing.Point(23, 84);
+            this.apellidos.Location = new System.Drawing.Point(4, 75);
             this.apellidos.Name = "apellidos";
             this.apellidos.Size = new System.Drawing.Size(168, 20);
             this.apellidos.TabIndex = 28;
             // 
             // nombre
             // 
-            this.nombre.Location = new System.Drawing.Point(23, 35);
+            this.nombre.Location = new System.Drawing.Point(4, 26);
             this.nombre.Name = "nombre";
             this.nombre.Size = new System.Drawing.Size(168, 20);
             this.nombre.TabIndex = 27;
             // 
             // label8
             // 
-            this.label8.Location = new System.Drawing.Point(33, 118);
+            this.label8.Location = new System.Drawing.Point(1, 109);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(100, 23);
             this.label8.TabIndex = 26;
@@ -126,7 +129,7 @@
             // 
             // label7
             // 
-            this.label7.Location = new System.Drawing.Point(318, 118);
+            this.label7.Location = new System.Drawing.Point(218, 109);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 23);
             this.label7.TabIndex = 25;
@@ -135,7 +138,7 @@
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(33, 59);
+            this.label5.Location = new System.Drawing.Point(1, 49);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 23);
             this.label5.TabIndex = 23;
@@ -144,7 +147,7 @@
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(318, 9);
+            this.label4.Location = new System.Drawing.Point(218, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 23);
             this.label4.TabIndex = 22;
@@ -153,7 +156,7 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(318, 59);
+            this.label3.Location = new System.Drawing.Point(218, 49);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 23);
             this.label3.TabIndex = 21;
@@ -162,7 +165,7 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(53, 175);
+            this.label2.Location = new System.Drawing.Point(1, 158);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 23);
             this.label2.TabIndex = 20;
@@ -171,7 +174,7 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(33, 9);
+            this.label1.Location = new System.Drawing.Point(1, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 19;
@@ -182,7 +185,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 381);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(396, 293);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.contraseña);
@@ -199,6 +203,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegistroUsuario";
             this.Text = "RegistroUsuario";
             this.ResumeLayout(false);

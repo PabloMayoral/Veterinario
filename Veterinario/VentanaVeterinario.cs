@@ -51,6 +51,11 @@ namespace Veterinario
                 buscaId.Text = "";
             }
         }
+        private void VentanaLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Environment.Exit(1);
+        }
+
     }
     }
 

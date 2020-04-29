@@ -57,6 +57,10 @@ namespace Veterinario
                 MessageBox.Show("usuario o contraseña incorrectos");
             }
         }
+        private void VentanaLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Environment.Exit(1);
+        }
     }
     
 }
