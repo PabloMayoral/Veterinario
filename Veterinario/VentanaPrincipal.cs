@@ -41,9 +41,15 @@ namespace Veterinario
 
         private void button9_Click(object sender, EventArgs e)
         { 
-            MessageBox.Show(conexion.insertaMascota(id.Text, nombre.Text, tipo.Text,raza.Text, fecha_nac.Text));
+          MessageBox.Show(conexion.insertaMascota(id.Text, nombre.Text, tipo.Text,raza.Text, sexo.Text,historial.Text,propietario.Text,veterinario.Text));
             this.Close();
+            LoginMascota l = new LoginMascota();
+            l.Show();
+
         }
+
+        
+
        
     }
 }

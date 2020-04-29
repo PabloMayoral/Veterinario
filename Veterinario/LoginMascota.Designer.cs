@@ -41,6 +41,8 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.fecha_nac = new System.Windows.Forms.Label();
+            this.raza = new System.Windows.Forms.Label();
             this.tipo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.id = new System.Windows.Forms.Label();
@@ -55,8 +57,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button7 = new System.Windows.Forms.Button();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.raza = new System.Windows.Forms.Label();
-            this.fecha_nac = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -191,6 +193,8 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.button2);
+            this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Controls.Add(this.fecha_nac);
             this.tabPage3.Controls.Add(this.raza);
             this.tabPage3.Controls.Add(this.tipo);
@@ -202,6 +206,22 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Mi Mascota";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // fecha_nac
+            // 
+            this.fecha_nac.Location = new System.Drawing.Point(20, 229);
+            this.fecha_nac.Name = "fecha_nac";
+            this.fecha_nac.Size = new System.Drawing.Size(302, 27);
+            this.fecha_nac.TabIndex = 9;
+            this.fecha_nac.Text = "label8";
+            // 
+            // raza
+            // 
+            this.raza.Location = new System.Drawing.Point(20, 183);
+            this.raza.Name = "raza";
+            this.raza.Size = new System.Drawing.Size(302, 27);
+            this.raza.TabIndex = 8;
+            this.raza.Text = "label7";
             // 
             // tipo
             // 
@@ -331,21 +351,25 @@
             this.pictureBox12.TabIndex = 20;
             this.pictureBox12.TabStop = false;
             // 
-            // raza
+            // button1
             // 
-            this.raza.Location = new System.Drawing.Point(20, 183);
-            this.raza.Name = "raza";
-            this.raza.Size = new System.Drawing.Size(302, 27);
-            this.raza.TabIndex = 8;
-            this.raza.Text = "label7";
+            this.button1.Location = new System.Drawing.Point(15, 278);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(42, 31);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "<";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // fecha_nac
+            // button2
             // 
-            this.fecha_nac.Location = new System.Drawing.Point(20, 229);
-            this.fecha_nac.Name = "fecha_nac";
-            this.fecha_nac.Size = new System.Drawing.Size(302, 27);
-            this.fecha_nac.TabIndex = 9;
-            this.fecha_nac.Text = "label8";
+            this.button2.Location = new System.Drawing.Point(63, 278);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(42, 31);
+            this.button2.TabIndex = 11;
+            this.button2.Text = ">";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // LoginMascota
             // 
@@ -407,5 +431,7 @@
         private System.Windows.Forms.Label nombre;
         private System.Windows.Forms.Label fecha_nac;
         private System.Windows.Forms.Label raza;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

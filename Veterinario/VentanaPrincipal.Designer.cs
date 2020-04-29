@@ -39,9 +39,22 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.veterinario = new System.Windows.Forms.TextBox();
+            this.LabelVeterinario = new System.Windows.Forms.Label();
+            this.sexo = new System.Windows.Forms.TextBox();
+            this.historial = new System.Windows.Forms.TextBox();
+            this.propietario = new System.Windows.Forms.TextBox();
+            this.Labelsexo = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Labelpropietario = new System.Windows.Forms.Label();
+            this.tipo = new System.Windows.Forms.TextBox();
+            this.id = new System.Windows.Forms.TextBox();
+            this.nombre = new System.Windows.Forms.TextBox();
+            this.raza = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -54,13 +67,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.fecha_nac = new System.Windows.Forms.TextBox();
-            this.raza = new System.Windows.Forms.TextBox();
-            this.nombre = new System.Windows.Forms.TextBox();
-            this.id = new System.Windows.Forms.TextBox();
-            this.tipo = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.Mascota.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -169,16 +176,23 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.veterinario);
+            this.panel2.Controls.Add(this.LabelVeterinario);
+            this.panel2.Controls.Add(this.sexo);
+            this.panel2.Controls.Add(this.historial);
+            this.panel2.Controls.Add(this.propietario);
+            this.panel2.Controls.Add(this.Labelsexo);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.Labelpropietario);
             this.panel2.Controls.Add(this.tipo);
             this.panel2.Controls.Add(this.id);
             this.panel2.Controls.Add(this.nombre);
             this.panel2.Controls.Add(this.raza);
-            this.panel2.Controls.Add(this.fecha_nac);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.button9);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
@@ -186,9 +200,119 @@
             this.panel2.Size = new System.Drawing.Size(419, 316);
             this.panel2.TabIndex = 0;
             // 
+            // veterinario
+            // 
+            this.veterinario.Location = new System.Drawing.Point(307, 100);
+            this.veterinario.Name = "veterinario";
+            this.veterinario.Size = new System.Drawing.Size(100, 20);
+            this.veterinario.TabIndex = 42;
+            // 
+            // LabelVeterinario
+            // 
+            this.LabelVeterinario.BackColor = System.Drawing.Color.Transparent;
+            this.LabelVeterinario.Location = new System.Drawing.Point(201, 103);
+            this.LabelVeterinario.Name = "LabelVeterinario";
+            this.LabelVeterinario.Size = new System.Drawing.Size(100, 23);
+            this.LabelVeterinario.TabIndex = 41;
+            this.LabelVeterinario.Text = "Veterinario:";
+            // 
+            // sexo
+            // 
+            this.sexo.Location = new System.Drawing.Point(65, 141);
+            this.sexo.Name = "sexo";
+            this.sexo.Size = new System.Drawing.Size(100, 20);
+            this.sexo.TabIndex = 40;
+            // 
+            // historial
+            // 
+            this.historial.Location = new System.Drawing.Point(310, 141);
+            this.historial.Name = "historial";
+            this.historial.Size = new System.Drawing.Size(100, 20);
+            this.historial.TabIndex = 39;
+            // 
+            // propietario
+            // 
+            this.propietario.Location = new System.Drawing.Point(307, 53);
+            this.propietario.Name = "propietario";
+            this.propietario.Size = new System.Drawing.Size(100, 20);
+            this.propietario.TabIndex = 38;
+            // 
+            // Labelsexo
+            // 
+            this.Labelsexo.BackColor = System.Drawing.Color.Transparent;
+            this.Labelsexo.Location = new System.Drawing.Point(15, 144);
+            this.Labelsexo.Name = "Labelsexo";
+            this.Labelsexo.Size = new System.Drawing.Size(39, 23);
+            this.Labelsexo.TabIndex = 37;
+            this.Labelsexo.Text = "Sexo:";
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Location = new System.Drawing.Point(201, 141);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 23);
+            this.label4.TabIndex = 36;
+            this.label4.Text = "Historial medico";
+            // 
+            // Labelpropietario
+            // 
+            this.Labelpropietario.BackColor = System.Drawing.Color.Transparent;
+            this.Labelpropietario.Location = new System.Drawing.Point(200, 56);
+            this.Labelpropietario.Name = "Labelpropietario";
+            this.Labelpropietario.Size = new System.Drawing.Size(66, 23);
+            this.Labelpropietario.TabIndex = 35;
+            this.Labelpropietario.Text = "Propietario:";
+            // 
+            // tipo
+            // 
+            this.tipo.Location = new System.Drawing.Point(65, 100);
+            this.tipo.Name = "tipo";
+            this.tipo.Size = new System.Drawing.Size(100, 20);
+            this.tipo.TabIndex = 34;
+            // 
+            // id
+            // 
+            this.id.Location = new System.Drawing.Point(65, 7);
+            this.id.Name = "id";
+            this.id.Size = new System.Drawing.Size(100, 20);
+            this.id.TabIndex = 33;
+            // 
+            // nombre
+            // 
+            this.nombre.Location = new System.Drawing.Point(307, 9);
+            this.nombre.Name = "nombre";
+            this.nombre.Size = new System.Drawing.Size(100, 20);
+            this.nombre.TabIndex = 32;
+            // 
+            // raza
+            // 
+            this.raza.Location = new System.Drawing.Point(65, 56);
+            this.raza.Name = "raza";
+            this.raza.Size = new System.Drawing.Size(100, 20);
+            this.raza.TabIndex = 31;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(15, 103);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 23);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "Tipo:";
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(15, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 23);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Raza:";
+            // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(204, 100);
+            this.button9.Location = new System.Drawing.Point(98, 222);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(203, 71);
             this.button9.TabIndex = 27;
@@ -203,15 +327,6 @@
             this.label9.Size = new System.Drawing.Size(33, 19);
             this.label9.TabIndex = 26;
             this.label9.Text = "ID:";
-            // 
-            // label8
-            // 
-            this.label8.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(201, 59);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(100, 23);
-            this.label8.TabIndex = 25;
-            this.label8.Text = "Fecha nacimiento:";
             // 
             // label7
             // 
@@ -322,58 +437,13 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // label1
+            // label3
             // 
-            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(15, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 23);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Raza:";
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(15, 103);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 23);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "Tipo:";
-            // 
-            // fecha_nac
-            // 
-            this.fecha_nac.Location = new System.Drawing.Point(307, 56);
-            this.fecha_nac.Name = "fecha_nac";
-            this.fecha_nac.Size = new System.Drawing.Size(100, 20);
-            this.fecha_nac.TabIndex = 30;
-            // 
-            // raza
-            // 
-            this.raza.Location = new System.Drawing.Point(65, 56);
-            this.raza.Name = "raza";
-            this.raza.Size = new System.Drawing.Size(100, 20);
-            this.raza.TabIndex = 31;
-            // 
-            // nombre
-            // 
-            this.nombre.Location = new System.Drawing.Point(307, 9);
-            this.nombre.Name = "nombre";
-            this.nombre.Size = new System.Drawing.Size(100, 20);
-            this.nombre.TabIndex = 32;
-            // 
-            // id
-            // 
-            this.id.Location = new System.Drawing.Point(65, 7);
-            this.id.Name = "id";
-            this.id.Size = new System.Drawing.Size(100, 20);
-            this.id.TabIndex = 33;
-            // 
-            // tipo
-            // 
-            this.tipo.Location = new System.Drawing.Point(65, 100);
-            this.tipo.Name = "tipo";
-            this.tipo.Size = new System.Drawing.Size(100, 20);
-            this.tipo.TabIndex = 34;
+            this.label3.Location = new System.Drawing.Point(94, 177);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(257, 29);
+            this.label3.TabIndex = 43;
+            this.label3.Text = "*Asegurese de introducir el DNI del propietario y del veterinario";
             // 
             // VentanaPrincipal
             // 
@@ -424,7 +494,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
@@ -435,9 +504,17 @@
         private System.Windows.Forms.TextBox id;
         private System.Windows.Forms.TextBox nombre;
         private System.Windows.Forms.TextBox raza;
-        private System.Windows.Forms.TextBox fecha_nac;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox sexo;
+        private System.Windows.Forms.TextBox historial;
+        private System.Windows.Forms.TextBox propietario;
+        private System.Windows.Forms.Label Labelsexo;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label Labelpropietario;
+        private System.Windows.Forms.TextBox veterinario;
+        private System.Windows.Forms.Label LabelVeterinario;
+        private System.Windows.Forms.Label label3;
     }
 }
 

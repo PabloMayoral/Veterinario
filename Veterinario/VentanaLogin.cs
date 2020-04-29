@@ -20,6 +20,7 @@ namespace Veterinario
             {
                 this.Hide();
                 VentanaVeterinario v = new VentanaVeterinario();
+                //LoginMascota v = new LoginMascota();
                 v.Show();
             }
             else

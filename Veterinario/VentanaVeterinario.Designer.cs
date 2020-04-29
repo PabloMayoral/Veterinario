@@ -73,8 +73,15 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.busca_nombre = new System.Windows.Forms.TextBox();
             this.button9 = new System.Windows.Forms.Button();
+            this.buscaId = new System.Windows.Forms.TextBox();
+            this.nombre = new System.Windows.Forms.Label();
+            this.id = new System.Windows.Forms.Label();
+            this.raza = new System.Windows.Forms.Label();
+            this.tipo = new System.Windows.Forms.Label();
+            this.sexo = new System.Windows.Forms.Label();
+            this.info = new System.Windows.Forms.Label();
+            this.propietario = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -513,8 +520,15 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.propietario);
+            this.tabPage5.Controls.Add(this.info);
+            this.tabPage5.Controls.Add(this.sexo);
+            this.tabPage5.Controls.Add(this.tipo);
+            this.tabPage5.Controls.Add(this.raza);
+            this.tabPage5.Controls.Add(this.id);
+            this.tabPage5.Controls.Add(this.nombre);
             this.tabPage5.Controls.Add(this.button9);
-            this.tabPage5.Controls.Add(this.busca_nombre);
+            this.tabPage5.Controls.Add(this.buscaId);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
@@ -522,13 +536,6 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Buscador";
             this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // busca_nombre
-            // 
-            this.busca_nombre.Location = new System.Drawing.Point(22, 16);
-            this.busca_nombre.Name = "busca_nombre";
-            this.busca_nombre.Size = new System.Drawing.Size(195, 20);
-            this.busca_nombre.TabIndex = 0;
             // 
             // button9
             // 
@@ -539,6 +546,69 @@
             this.button9.Text = "buscar";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // buscaId
+            // 
+            this.buscaId.Location = new System.Drawing.Point(22, 16);
+            this.buscaId.Name = "buscaId";
+            this.buscaId.Size = new System.Drawing.Size(195, 20);
+            this.buscaId.TabIndex = 0;
+            // 
+            // nombre
+            // 
+            this.nombre.Location = new System.Drawing.Point(19, 97);
+            this.nombre.Name = "nombre";
+            this.nombre.Size = new System.Drawing.Size(136, 23);
+            this.nombre.TabIndex = 7;
+            this.nombre.Text = "Nombre:";
+            // 
+            // id
+            // 
+            this.id.Location = new System.Drawing.Point(19, 62);
+            this.id.Name = "id";
+            this.id.Size = new System.Drawing.Size(136, 23);
+            this.id.TabIndex = 8;
+            this.id.Text = "ID:";
+            // 
+            // raza
+            // 
+            this.raza.Location = new System.Drawing.Point(19, 163);
+            this.raza.Name = "raza";
+            this.raza.Size = new System.Drawing.Size(136, 23);
+            this.raza.TabIndex = 9;
+            this.raza.Text = "Raza:";
+            // 
+            // tipo
+            // 
+            this.tipo.Location = new System.Drawing.Point(19, 129);
+            this.tipo.Name = "tipo";
+            this.tipo.Size = new System.Drawing.Size(136, 23);
+            this.tipo.TabIndex = 10;
+            this.tipo.Text = "Tipo:";
+            // 
+            // sexo
+            // 
+            this.sexo.Location = new System.Drawing.Point(19, 229);
+            this.sexo.Name = "sexo";
+            this.sexo.Size = new System.Drawing.Size(136, 23);
+            this.sexo.TabIndex = 11;
+            this.sexo.Text = "Sexo:";
+            // 
+            // info
+            // 
+            this.info.Location = new System.Drawing.Point(19, 195);
+            this.info.Name = "info";
+            this.info.Size = new System.Drawing.Size(136, 23);
+            this.info.TabIndex = 12;
+            this.info.Text = "Información:";
+            // 
+            // propietario
+            // 
+            this.propietario.Location = new System.Drawing.Point(19, 263);
+            this.propietario.Name = "propietario";
+            this.propietario.Size = new System.Drawing.Size(136, 23);
+            this.propietario.TabIndex = 13;
+            this.propietario.Text = "Propietario:";
             // 
             // VentanaVeterinario
             // 
@@ -623,6 +693,13 @@
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.TextBox busca_nombre;
+        private System.Windows.Forms.TextBox buscaId;
+        private System.Windows.Forms.Label propietario;
+        private System.Windows.Forms.Label info;
+        private System.Windows.Forms.Label sexo;
+        private System.Windows.Forms.Label tipo;
+        private System.Windows.Forms.Label raza;
+        private System.Windows.Forms.Label id;
+        private System.Windows.Forms.Label nombre;
     }
 }

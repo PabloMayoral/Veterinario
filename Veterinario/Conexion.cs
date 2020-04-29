@@ -16,19 +16,18 @@ namespace Veterinario
         {
             conexion = new MySqlConnection("Server = 127.0.0.1; Database = test; Uid = root; Pwd=;Port = 3306");
         }
-        public String getMascotaPorNombre(String nombre)
+        public DataTable buscaMascota(String ID)
         {
-
             try
             {
                 conexion.Open();
-                MySqlCommand consulta =
-                    new MySqlCommand("SELECT ID FROM animal WHERE LOWER(Nombre) ='" + nombre + "'", conexion);
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM animales " +
+                                                         "WHERE ID ='" + ID + "'", conexion);
                 MySqlDataReader resultado = consulta.ExecuteReader();
-                DataTable animal = new DataTable();
-                animal.Load(resultado);
+                DataTable mascota = new DataTable();
+                mascota.Load(resultado);
                 conexion.Close();
-                return animal.Rows[0]["ID"].ToString();
+                return mascota;
 
             }
             catch (MySqlException e)
@@ -36,38 +35,51 @@ namespace Veterinario
                 throw e;
             }
         }
-        public DataTable getAnimalPorId(int id)
+        public Boolean loginMascota(string ID)
         {
             try
             {
                 conexion.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM animal where ID ='" + id + "'", conexion);
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM animales     " +
+                                     "where ID = @ID",
+                                     conexion);
+                consulta.Parameters.AddWithValue("@ID", ID);
+
                 MySqlDataReader resultado = consulta.ExecuteReader();
-                DataTable tabla = new DataTable();
-                tabla.Load(resultado);
+
+                //if (resultado.Read())
+                //{
+                //    string contraseña = resultado.GetString("pass");
+                //    if (BCrypt.Net.BCrypt.Verify(pass, contraseña))
+                //    {
+                //        return true;
+                //    }
+                //    return false;
+                //}
                 conexion.Close();
-                return tabla;
+                return false;
             }
+
             catch (MySqlException e)
             {
-                throw e;
+                return false;
             }
         }
-        public Boolean loginVeterinario(string Usuario, string pass)
+        public Boolean loginVeterinario(string DNI, string pass)
         {
             try
             {
                 conexion.Open();
                 MySqlCommand consulta = new MySqlCommand("SELECT * FROM veterinarios " +
-                                     "where Usuario = @Usuario",
+                                     "where DNI = @DNI",
                                      conexion);
-                consulta.Parameters.AddWithValue("@Usuario", Usuario);
+                consulta.Parameters.AddWithValue("@DNI", DNI);
              
                 MySqlDataReader resultado = consulta.ExecuteReader();
 
                 if (resultado.Read())
                 {
-                    string contraseña = resultado.GetString("pass");
+                    string contraseña = resultado.GetString("Pass");
                     if (BCrypt.Net.BCrypt.Verify(pass, contraseña))
                     {
                         return true;
@@ -83,21 +95,21 @@ namespace Veterinario
                 return false;
             }
         }
-        public Boolean loginUsuario(string Usuario, string pass)
+        public Boolean loginUsuario(string DNI, string pass)
         {
             try
             {
                 conexion.Open();
                 MySqlCommand consulta = new MySqlCommand("SELECT * FROM clientes " +
-                                     "where Usuario = @Usuario",
+                                     "where DNI = @DNI",
                                      conexion);
-                consulta.Parameters.AddWithValue("@Usuario", Usuario);
+                consulta.Parameters.AddWithValue("@DNI", DNI);
 
                 MySqlDataReader resultado = consulta.ExecuteReader();
 
                 if (resultado.Read())
                 {
-                    string contraseña = resultado.GetString("pass");
+                    string contraseña = resultado.GetString("Pass");
                     if (BCrypt.Net.BCrypt.Verify(pass, contraseña))
                     {
                         return true;
@@ -116,7 +128,7 @@ namespace Veterinario
         public String insertaUsuario(String Nombre, String Apellidos,
                                        String DNI, String Correo,
                                        String Dirección, String Teléfono,
-                                       String Usuario, String pass)
+                                        String Pass)
         {
             try
             {
@@ -124,7 +136,7 @@ namespace Veterinario
                 MySqlCommand consulta =
                     new MySqlCommand("INSERT INTO clientes " +
                                      "VALUES (@Nombre, @Apellidos, @DNI, @Correo," +
-                                     "@Dirección, @Teléfono, @Usuario, @pass)", conexion);
+                                     "@Dirección, @Teléfono, @Pass)", conexion);
 
                 consulta.Parameters.AddWithValue("@Nombre", Nombre);
                 consulta.Parameters.AddWithValue("@Apellidos", Apellidos);
@@ -132,8 +144,7 @@ namespace Veterinario
                 consulta.Parameters.AddWithValue("@Correo", Correo);
                 consulta.Parameters.AddWithValue("@Dirección", Dirección);
                 consulta.Parameters.AddWithValue("@Teléfono", Teléfono);
-                consulta.Parameters.AddWithValue("@Usuario", Usuario);
-                consulta.Parameters.AddWithValue("@pass", pass);
+                consulta.Parameters.AddWithValue("@Pass", Pass);
 
                 consulta.ExecuteNonQuery();
 
@@ -149,7 +160,7 @@ namespace Veterinario
         public String insertaVeterinario(String Nombre, String Apellidos,
                                      String DNI, String Correo,
                                      String Dirección, String Teléfono,
-                                     String Usuario, String pass)
+                                      String Pass)
         {
             try
             {
@@ -157,7 +168,7 @@ namespace Veterinario
                 MySqlCommand consulta =
                     new MySqlCommand("INSERT INTO veterinarios " +                              
                                      "VALUES (@Nombre, @Apellidos, @DNI, @Correo," +
-                                     "@Dirección, @Teléfono, @Usuario, @pass)", conexion);
+                                     "@Dirección, @Teléfono, @Pass)", conexion);
 
                 consulta.Parameters.AddWithValue("@Nombre", Nombre);
                 consulta.Parameters.AddWithValue("@Apellidos", Apellidos);
@@ -165,8 +176,7 @@ namespace Veterinario
                 consulta.Parameters.AddWithValue("@Correo", Correo);
                 consulta.Parameters.AddWithValue("@Dirección", Dirección);
                 consulta.Parameters.AddWithValue("@Teléfono", Teléfono);
-                consulta.Parameters.AddWithValue("@Usuario", Usuario);
-                consulta.Parameters.AddWithValue("@pass", pass);
+                consulta.Parameters.AddWithValue("@pass", Pass);
 
                 consulta.ExecuteNonQuery();
 
@@ -179,30 +189,38 @@ namespace Veterinario
             }
 
         }
-        public String insertaMascota(String ID, String Nombre,String Tipo, String Raza,String Fecha_Nac)
+        public String insertaMascota(String ID, String Nombre, String Tipo, String Raza,String Sexo,String Historial_Medico,String Propietario,String Veterinario)
         {
+            String resultado = "";
             try
             {
                 conexion.Open();
                 MySqlCommand consulta =
-                    new MySqlCommand("INSERT INTO animal " +
-                                     "VALUES (@ID, @Nombre, @Tipo, @Raza,@Fecha_nac)", conexion);
+                    new MySqlCommand("INSERT INTO animales"+
+                    "(ID, Nombre, Tipo, Raza, Sexo, Historial_Medico, Propietario, Veterinario) " +
+                                     "VALUES (@ID, @Nombre, @Tipo, @Raza, @Sexo, @Historial_Medico, @Propietario, @Veterinario)", conexion);
 
                 consulta.Parameters.AddWithValue("@ID", ID);
                 consulta.Parameters.AddWithValue("@Nombre", Nombre);
                 consulta.Parameters.AddWithValue("@Tipo", Tipo);
                 consulta.Parameters.AddWithValue("@Raza", Raza);
-                consulta.Parameters.AddWithValue("@Fecha_Nac", Fecha_Nac);
+                consulta.Parameters.AddWithValue("@Sexo", Sexo);
+                consulta.Parameters.AddWithValue("@Historial_Medico", Historial_Medico);
+                consulta.Parameters.AddWithValue("@Propietario", Propietario);
+                consulta.Parameters.AddWithValue("@Veterinario", Veterinario);
+
                 consulta.ExecuteNonQuery();
 
                 conexion.Close();
-                return "Registro realizado con éxito";
+                resultado = "Registro realizado con éxito";
             }
             catch (MySqlException e)
             {
-                return "No se ha podido realizar el registro";
+                Console.WriteLine(e.Message);
+                resultado = "No se ha podido realizar el registro";
             }
-
+            return resultado;
         }
     }
-}
+    }
+

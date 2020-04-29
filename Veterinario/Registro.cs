@@ -20,7 +20,7 @@ namespace Veterinario
 
                 MessageBox.Show(conexion.insertaVeterinario(nombre.Text, apellidos.Text, dni.Text,
                                         gmail.Text, direccion.Text, telefono.Text,
-                                        nombre_usuario.Text, myHash));
+                                         myHash));
                 this.Close();
             VentanaLogin v = new VentanaLogin();
               v.Show();
